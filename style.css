@@ -1,0 +1,211 @@
+/* ============================================================
+   PDFWix — GitHub Pages
+   Palette and type are derived from the PDFWix brand:
+   the signature red, soft blush tints, and a mono accent that
+   nods to the "runs in your browser" nature of the tools.
+   ============================================================ */
+
+:root {
+  --ink:      #1b1614;
+  --red:      #e8443c;
+  --red-dark: #c2332c;
+  --blush:    #fff4f2;
+  --paper:    #fdfbfa;
+  --card:     #ffffff;
+  --muted:    #6c645f;
+  --line:     #f0e7e3;
+
+  --display: 'Space Grotesk', system-ui, sans-serif;
+  --body:    'Inter', system-ui, sans-serif;
+  --mono:    'Space Mono', ui-monospace, monospace;
+
+  --maxw: 1080px;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--display); line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
+
+a { color: var(--red); text-decoration: none; }
+a:hover { color: var(--red-dark); }
+
+img { max-width: 100%; }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--ink); color: #fff; padding: 10px 16px; z-index: 100; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; color: #fff; }
+
+/* ---------- Header ---------- */
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: var(--maxw); margin: 0 auto; padding: 22px 24px;
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.brand-logo { display: block; height: 34px; width: auto; }
+.brand-logo.small { height: 22px; margin-right: 7px; vertical-align: middle; }
+.brand-mark { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--ink); letter-spacing: -0.03em; }
+.brand-mark.small { font-size: 19px; display: inline-flex; align-items: center; }
+.brand-accent { color: var(--red); }
+.header-cta {
+  font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--ink);
+  border: 1.5px solid var(--ink); padding: 9px 16px; border-radius: 999px; transition: all .18s ease;
+}
+.header-cta:hover { background: var(--ink); color: #fff; }
+
+/* ---------- Shared section ---------- */
+.band { max-width: var(--maxw); margin: 0 auto; padding: 72px 24px; }
+.band-tint { max-width: none; background: var(--blush); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.band-tint > * { max-width: var(--maxw); margin-left: auto; margin-right: auto; }
+.band-head { max-width: 720px; margin-bottom: 44px; }
+.band-head h2 { font-size: clamp(28px, 4vw, 40px); margin-top: 6px; }
+.band-sub { color: var(--muted); margin-top: 14px; font-size: 17px; }
+
+.eyebrow {
+  font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--red);
+  letter-spacing: 0.02em; margin: 0; text-transform: lowercase;
+}
+
+.prose { max-width: 720px; }
+.prose p { font-size: 17px; color: #3a332f; margin: 0 0 18px; }
+.prose p:last-child { margin-bottom: 0; }
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: var(--maxw); margin: 0 auto; padding: 56px 24px 80px;
+}
+.hero h1 {
+  font-size: clamp(38px, 7vw, 72px); font-weight: 700; margin: 16px 0 0;
+}
+.hero .hl { color: var(--red); }
+.hero .lede {
+  max-width: 600px; font-size: clamp(17px, 2.2vw, 20px); color: var(--muted); margin: 24px 0 0;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+
+.btn {
+  display: inline-block; font-family: var(--display); font-weight: 600; font-size: 16px;
+  padding: 14px 26px; border-radius: 999px; transition: transform .15s ease, background .18s ease, color .18s ease;
+}
+.btn-primary { background: var(--red); color: #fff; }
+.btn-primary:hover { background: var(--red-dark); color: #fff; transform: translateY(-2px); }
+.btn-ghost { color: var(--ink); border: 1.5px solid var(--line); background: var(--card); }
+.btn-ghost:hover { color: var(--ink); border-color: var(--ink); transform: translateY(-2px); }
+.btn-light { background: #fff; color: var(--red); }
+.btn-light:hover { background: #fff; color: var(--red-dark); transform: translateY(-2px); }
+
+.hero-badges {
+  list-style: none; padding: 0; margin: 40px 0 0; display: flex; flex-wrap: wrap; gap: 10px 14px;
+}
+.hero-badges li {
+  font-family: var(--mono); font-size: 13px; color: var(--ink);
+  background: var(--blush); border: 1px solid var(--line); padding: 7px 14px; border-radius: 999px;
+}
+.hero-badges li::before { content: "✓ "; color: var(--red); font-weight: 700; }
+
+/* ---------- Tools grid ---------- */
+.tool-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+}
+.tool-card {
+  display: flex; flex-direction: column; background: var(--card); color: var(--ink);
+  border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+.tool-card:hover {
+  transform: translateY(-4px); color: var(--ink);
+  border-color: #f3cfca; box-shadow: 0 14px 30px -16px rgba(226, 51, 44, .35);
+}
+.tool-card h3 { font-size: 19px; margin-bottom: 8px; }
+.tool-card p { margin: 0; color: var(--muted); font-size: 14.5px; flex: 1; }
+.tool-go {
+  font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--red); margin-top: 16px;
+}
+
+/* ---------- Why / features ---------- */
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px 36px; }
+.feature h3 { font-size: 19px; margin-bottom: 8px; padding-left: 16px; position: relative; }
+.feature h3::before {
+  content: ""; position: absolute; left: 0; top: 4px; width: 4px; height: 18px;
+  background: var(--red); border-radius: 2px;
+}
+.feature p { margin: 0; color: var(--muted); font-size: 15px; padding-left: 16px; }
+
+/* ---------- Steps ---------- */
+.steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; counter-reset: none; }
+.steps li { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+.step-num { font-family: var(--mono); font-weight: 700; font-size: 14px; color: var(--red); }
+.steps h3 { font-size: 20px; margin: 12px 0 8px; }
+.steps p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* ---------- FAQ ---------- */
+.faq { max-width: 760px; }
+.faq details {
+  border: 1px solid var(--line); border-radius: 12px; padding: 4px 20px; margin-bottom: 12px; background: var(--card);
+}
+.faq summary {
+  font-family: var(--display); font-weight: 600; font-size: 17px; cursor: pointer; padding: 16px 0; list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--red); font-size: 22px; font-family: var(--mono); line-height: 1; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { margin: 0 0 18px; color: var(--muted); font-size: 15.5px; }
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  background: var(--red); color: #fff; text-align: center; padding: 76px 24px;
+}
+.cta-band h2 { font-size: clamp(28px, 4vw, 40px); }
+.cta-band p { font-size: 18px; margin: 14px 0 30px; opacity: .95; }
+
+/* ---------- Footer ---------- */
+.site-footer { max-width: var(--maxw); margin: 0 auto; padding: 44px 24px 56px; }
+.footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 22px; }
+.footer-nav a { font-family: var(--mono); font-size: 13px; color: var(--ink); }
+.footer-nav a:hover { color: var(--red); }
+.footer-note { color: var(--muted); font-size: 13.5px; margin-top: 20px; }
+
+/* ---------- Reveal animation ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Focus visibility ---------- */
+a:focus-visible, .btn:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--red); outline-offset: 3px; border-radius: 4px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .tool-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .band { padding: 56px 20px; }
+  .tool-grid { grid-template-columns: 1fr; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .hero { padding: 40px 20px 64px; }
+  .header-cta { display: none; }
+  .footer-row { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn:hover, .tool-card:hover { transform: none; }
+}
