@@ -4,8 +4,6 @@ A simple, branded GitHub Pages site for **PDFWix** — a collection of free, bro
 
 **Live site:** https://www.pdfwix.com/
 
-**Live Github:** https://pdfwix.github.io/pdfwix/
-
 ## Tools featured on this page
 
 - [Merge PDF](https://www.pdfwix.com/merge-pdf) — combine multiple PDFs into one file
